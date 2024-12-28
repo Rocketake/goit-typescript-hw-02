@@ -1,0 +1,20 @@
+.wrapper {
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  width: 450px;
+  height: 290px;
+  border: 1px solid black;
+  transition: 0.3s;
+  &.card:hover {
+    transform: scale(1.05);
+    cursor: zoom-in;
+  }
+}
