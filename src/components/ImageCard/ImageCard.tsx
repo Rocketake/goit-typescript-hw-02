@@ -1,9 +1,18 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { FC } from 'react'
 
 import s from "./ImageCard.module.css"
 
-const ImageCard = ({ small, regular, altDesc, desk, likes, fn, ln }) => {
+
+interface ImageCardProps  {
+	small: string,
+	altDesc: string,
+	likes: number,
+	fn: string,
+	ln: string,
+}
+
+const ImageCard: FC<ImageCardProps> = ({ small, altDesc, likes, fn, ln }) => {
   return (
 	  <div className={s.wrapper}>
 		  <img className={s.image} src={small} alt={altDesc} />

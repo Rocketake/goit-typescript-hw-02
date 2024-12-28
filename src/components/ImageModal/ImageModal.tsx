@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
+import { Styles } from 'react-modal';
 
-const customStyles = {
+const customStyles: Styles = {
   content: {
     top: '50%',
     left: '50%',
@@ -8,29 +9,35 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: "transparent",
-    border: "none",
-
-    
+    backgroundColor: '#fff',
+    border: '1px solid #ccc',
   },
   overlay: {
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(255, 255, 255, 0.75)'
-    },
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
 };
+
+
 
 
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root');
 
-import React from 'react'
+import React, { FC } from 'react'
 
-const ImageModal = ({closeModal, isOpen, modalImage}) => {
+type ImageModalProps = {
+  closeModal: () => void,
+  isOpen: boolean,
+modalImage: string,
+}
+
+const ImageModal: FC<ImageModalProps> = ({closeModal, isOpen, modalImage}) => {
 
 
   return (

@@ -6,13 +6,22 @@ import s from "./SearchBar.module.css"
 
 import { IoSearch } from "react-icons/io5";
 
-const SearchBar = ( {handleQuery} ) => {
+type SearchBarProps = {
+	handleQuery: (value: string) => void,
+	query: string,
+}
 
-	const initialValues = {
+type formInitialValues = {
+	query: string
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ handleQuery, query}) => {
+
+	const initialValues: formInitialValues = {
 	query: '',
 	}
 	
-	const handleSubmit = values => {
+	const handleSubmit = (values: formInitialValues) => {
 		if (values.query.trim() === '') {
 			toast.error("Введіть текст!")
       return;
